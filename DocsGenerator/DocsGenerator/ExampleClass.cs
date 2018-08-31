@@ -15,9 +15,9 @@ namespace DocsGenerator
         /// </summary>
         /// <param name="firstName">The person's first name</param>
         /// <param name="lastName">The person's last name</param>
-        /// <param name="middleNames">A <see cref="string[]"/> of all the person's middle names</param>
-        /// <returns>The name of the current person</returns>
-        /// <remarks>Puts a space between each name</remarks>
+        /// <param name="middleNames">A <see cref="T:string[]"/> of all the person's middle names</param>
+        /// <returns>The name of the current person as a single <see cref="String"/></returns>
+        /// <remarks>Puts a space between each name. <see cref="ExampleNamespace.SampleClass"/> is not used</remarks>
         /// <example>
         /// <code language="lang-csharp">
         /// var example = new ExampleClass();
@@ -27,6 +27,7 @@ namespace DocsGenerator
         /// Console.WriteLine(fullName);
         /// </code>
         /// </example>
+        /// <exception cref="NotImplementedException">This method is not yet implemented</exception>
         public string GetFullName(string firstName, string lastName, params string[] middleNames)
         {
             throw new NotImplementedException();
