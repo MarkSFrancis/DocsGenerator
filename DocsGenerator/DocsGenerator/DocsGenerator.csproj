@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="templates\**" />
-    <EmbeddedResource Remove="templates\**" />
-    <None Remove="templates\**" />
+    <Compile Remove="CustomTemplate\**" />
+    <EmbeddedResource Remove="CustomTemplate\**" />
+    <None Remove="CustomTemplate\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,7 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CustomTemplate\" />
+    <Folder Include="images\" />
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="rmdir /s /q $(ProjectDir)_site" />
+  </Target>
 
 </Project>
