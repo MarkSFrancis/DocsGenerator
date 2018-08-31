@@ -8,24 +8,24 @@ var concat = require('gulp-concat');
 var copy = require('gulp-copy');
 
 var vendor = {
-  css: ['bower_components/bootstrap/dist/css/bootstrap.css',
-        'bower_components/highlightjs/styles/github-gist.css'
+    css: ['node_modules/bootstrap/dist/css/bootstrap.css',
+        'node_modules/highlightjs/styles/github.css'
        ],
-  js: ['bower_components/jquery/dist/jquery.min.js',
-       'bower_components/bootstrap/dist/js/bootstrap.min.js',
-       'bower_components/highlightjs/highlight.pack.min.js',
-       'bower_components/js-url/url.min.js',
-       'bower_components/twbs-pagination/jquery.twbsPagination.min.js',
-       "bower_components/mark.js/dist/jquery.mark.min.js",
-       "bower_components/anchor-js/anchor.min.js"
+    js: ['node_modules/jquery/dist/jquery.min.js',
+       'node_modules/bootstrap/dist/js/bootstrap.min.js',
+       'node_modules/highlightjs/highlight.pack.min.js',
+       'node_modules/js-url/url.min.js',
+       'node_modules/twbs-pagination/jquery.twbsPagination.min.js',
+       "node_modules/mark.js/dist/jquery.mark.min.js",
+       "node_modules/anchor-js/anchor.min.js"
       ],
   webWorker: {
     src: ['lunr.js'],
-    cwd: 'bower_components/lunr.js/'
+    cwd: 'node_modules/lunr/'
   },
   font: {
     src: ['*'],
-    cwd: 'bower_components/bootstrap/dist/fonts/'
+      cwd: 'node_modules/bootstrap/dist/fonts/'
   }
 }
 
@@ -48,7 +48,7 @@ gulp.task('copy', function () {
   gulp.src(vendor.font.src, {cwd: vendor.font.cwd})
     .pipe(copy('./fonts/'))
   ;
-  gulp.src('bower_components/lunr.js/lunr.js')
+    gulp.src('node_modules/lunr/lunr.js')
     .pipe(minifyJs({
       ext:{min:'.min.js'}
     }))

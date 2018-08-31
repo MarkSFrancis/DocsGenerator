@@ -6,8 +6,14 @@
 
   <ItemGroup>
     <Compile Remove="CustomTemplate\**" />
+    <Compile Remove="templates\custom\bower_components\**" />
+    <Compile Remove="templates\custom\node_modules\**" />
     <EmbeddedResource Remove="CustomTemplate\**" />
+    <EmbeddedResource Remove="templates\custom\bower_components\**" />
+    <EmbeddedResource Remove="templates\custom\node_modules\**" />
     <None Remove="CustomTemplate\**" />
+    <None Remove="templates\custom\bower_components\**" />
+    <None Remove="templates\custom\node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
