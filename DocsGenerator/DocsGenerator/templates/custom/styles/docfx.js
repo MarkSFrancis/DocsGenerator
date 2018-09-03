@@ -342,7 +342,7 @@ $(function () {
     // Update href in navbar
     function renderNavbar() {
         var navbar = $('#navbar ul')[0];
-        if (typeof (navbar) === 'undefined') {
+        if (typeof(navbar) === 'undefined') {
             loadNavbar();
         } else {
             $('#navbar ul a.active').parents('li').addClass(active);
