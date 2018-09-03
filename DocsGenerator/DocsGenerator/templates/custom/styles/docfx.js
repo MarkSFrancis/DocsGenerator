@@ -51,7 +51,7 @@ $(function () {
     // Styling for tables in conceptual documents using Bootstrap.
     // See http://getbootstrap.com/css/#tables
     function renderTables() {
-        $('table').addClass('table table-bordered table-striped table-condensed').wrap('<div class=\"table-responsive\"></div>');
+        $('table').addClass('table table-bordered').wrap('<div class=\"table-responsive\"></div>');
     }
 
     // Styling for alerts.
@@ -422,7 +422,8 @@ $(function () {
                 $(e).addClass(active).addClass(expanded);
                 $(e).children('a').addClass(active);
                 top += $(e).position().top;
-            })
+            });
+
             $('.sidetoc').scrollTop(top - 50);
 
             if ($('footer').is(':visible')) {
@@ -528,13 +529,14 @@ $(function () {
                 href: e.href,
                 name: e.innerHTML
             });
-        })
+        });
+
         $('#toc a.active').each(function (i, e) {
             breadcrumb.push({
                 href: e.href,
                 name: e.innerHTML
             });
-        })
+        });
 
         var html = util.formList(breadcrumb, 'breadcrumb', 'breadcrumb-item');
         $('#breadcrumb').html(html);
@@ -542,29 +544,27 @@ $(function () {
 
     //Setup Affix
     function renderAffix() {
+        console.log('Rendering affix...');
         var hierarchy = getHierarchy();
+        console.log('Rendering hierarchy... ');
+        console.log(hierarchy);
+
         if (hierarchy && hierarchy.length > 0) {
             var html = '<h5 class="title">In This Article</h5>';
-            html += util.formList(hierarchy, ['nav', 'bs-docs-sidenav']);
+            html += util.formList(hierarchy, ['nav'], ['nav-item'], ['nav-link']);
             $("#affix").empty().append(html);
             if ($('footer').is(':visible')) {
                 $(".sideaffix").css("bottom", "70px");
             }
-            $('#affix a').click(function () {
-                var scrollspy = $('[data-spy="scroll"]').data()['bs.scrollspy'];
-                var target = e.target.hash;
-                if (scrollspy && target) {
-                    scrollspy.activate(target);
-                }
-            });
         }
 
         function getHierarchy() {
             // supported headers are h1, h2, h3, and h4
-            var $headers = $($.map(['h1', 'h2', 'h3', 'h4'], function (h) { return ".article article " + h; }).join(", "));
+            var $headers = $($.map(['h1', 'h2', 'h3', 'h4'], function (h) { return "article " + h; }).join(", "));
 
             // a stack of hierarchy items that are currently being built
             var stack = [];
+
             $headers.each(function (i, e) {
                 if (!e.id) {
                     return;
@@ -1027,7 +1027,7 @@ $(function () {
             }
         }
 
-        function formList(item, classes, itemClasses) {
+        function formList(item, classes, itemClasses, linkClasses) {
             var level = 1;
             var model = {
                 items: item
@@ -1054,7 +1054,12 @@ $(function () {
                     var href = item.href;
                     var name = item.name;
                     if (!name) continue;
-                    html += href ? '<li class="' + itemCls + '"><a href="' + href + '">' + name + '</a>' : '<li class="' + itemCls + '">' + name;
+
+                    var classes = '';
+                    if (linkClasses) {
+                        classes = ' class="' + linkClasses.join(' ') + '"';
+                    }
+                    html += href ? '<li class="' + itemCls + '"><a href="' + href + '"' + classes + '>' + name + '</a>' : '<li class="' + itemCls + '">' + name;
                     html += getList(item, cls) || '';
                     html += '</li>';
                 }
