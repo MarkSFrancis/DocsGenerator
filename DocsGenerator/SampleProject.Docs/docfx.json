@@ -36,13 +36,6 @@
         ]
       }
     ],
-    "overwrite": [
-      {
-        "exclude": [
-          "obj/**"
-        ]
-      }
-    ],
     "dest": "../SampleProject.Site",
     "template": [
       "../Templates/Clean"
