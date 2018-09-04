@@ -19,3 +19,7 @@ To change this to run your own builds, add `docfx.console` to your solution, and
 1. Build the solution
 1. A new folder in `DocsGenerator` called `SampleProject.Site` will be generated
 1. Open that folder with a server that can serve static files (such as http-server), and you will be able to browse generated documentation site
+
+# TODO
+
+* Add a menu for mobile - there's no way to view the TOC from mobile
