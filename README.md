@@ -1,9 +1,19 @@
 # DocsGenerator
-A documentation generator, using DocFX with custom styles and templating
+A custom DocFX template, with samples
 
-## To Use
+## To Build the Sample
 
 1. Clone or fork the repository
-1. Build the DocsGenerator project using Visual Studio
-1. A new folder called "_site" will be generated.  
-1. Open that folder with a server that can serve static files (such as http-server), and you can see the generated documentation site
+
+1. Open `DocsGenerator/SampleProject.sln` in Visual Studio
+
+1. Build the solution
+
+1. A new folder in `DocsGenerator` called `SampleProject.Site` will be generated
+
+1. Open that folder with a server that can serve static files (such as http-server), and you will be able to browse generated documentation site
+
+## Configuration
+
+The sample project's build is configured by a dependency on `docfx.console`, and a reference to the `Templates/Clean` folder.  
+To change this to run your own builds, add `docfx.console` to your solution, and edit the `templates` section in `docfx.json` to use the `Templates/Clean` (you'll need to edit the relative path according to where the `Templates/Clean` folder is to your docfx.json file)
