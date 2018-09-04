@@ -402,10 +402,6 @@ article section {
         margin-left: 0;
     }
 
-.sidenav, .fixed_header, .toc {
-    background-color: #f1f1f1;
-}
-
 header .navbar {
     border-width: 0px 0px 1px;
     border-radius: 0;
