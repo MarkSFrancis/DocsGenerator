@@ -23,3 +23,4 @@ To change this to run your own builds, add `docfx.console` to your solution, and
 # TODO
 
 * Add a menu for mobile - there's no way to view the TOC from mobile
+* Add dark theme
