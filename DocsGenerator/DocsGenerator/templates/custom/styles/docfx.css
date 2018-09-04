@@ -5,6 +5,16 @@ body {
     height: 100%;
 }
 
+.body-content.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.body-content.row > .col-3 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 button,
 a {
     color: #337ab7;
@@ -93,6 +103,9 @@ svg:hover path {
     background-color: inherit;
     padding: 0;
 }
+
+
+
 /* additional spacing fixes */
 .btn + .btn {
     margin-left: 10px;
@@ -757,6 +770,11 @@ footer {
     border-top: 1px solid #e7e7e7;
     background-color: #f8f8f8;
     padding: 15px 0;
+    text-align: right;
+}
+
+.footer .to-top {
+    margin-right: 25px;
 }
 
 @media (min-width: 768px) {
