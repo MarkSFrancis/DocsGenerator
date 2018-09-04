@@ -3,6 +3,7 @@ html,
 body {
     font-family: 'Segoe UI', Tahoma, Helvetica, sans-serif;
     height: 100%;
+    line-height: 1.6;
 }
 
 .content {
@@ -1091,7 +1092,7 @@ div.embeddedvideo {
 }
 
 .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title {
-    color: #000000;
+    color: #007d9a;
     font-weight: normal;
 }
 
