@@ -6,7 +6,7 @@
           "files": [
             "**.csproj"
           ],
-          "src": "./"
+          "src": "../SampleProject"
         }
       ],
       "dest": "api"
@@ -47,7 +47,7 @@
         ]
       }
     ],
-    "dest": "_site",
+    "dest": "../SampleProject.Site",
     "template": [
       "templates/light"
     ]

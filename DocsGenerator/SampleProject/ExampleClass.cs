@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DocsGenerator
+namespace SampleProject
 {
     /// <summary>
     /// Test

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace DocsGenerator.ExampleNamespace
+namespace SampleProject.ExampleNamespace
 {
     /// <summary>
     /// A sample logging class

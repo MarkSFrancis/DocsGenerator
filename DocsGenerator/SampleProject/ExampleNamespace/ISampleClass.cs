@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DocsGenerator.ExampleNamespace
+namespace SampleProject.ExampleNamespace
 {
     /// <summary>
     /// Provides a logging interface for errors
