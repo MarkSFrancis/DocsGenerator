@@ -4,12 +4,6 @@
 {{#children}}
 <h3 id="{{id}}">{{>partials/classSubtitle}}</h3>
 {{#children}}
-{{^_disableContribution}}
-{{#sourceurl}}
-<span class="small pull-right mobile-hide">
-  <a href="{{sourceurl}}">{{__global.viewSource}}</a>
-</span>{{/sourceurl}}
-{{/_disableContribution}}
 {{#overload}}
 <a id="{{id}}" data-uid="{{uid}}"></a>
 {{/overload}}
