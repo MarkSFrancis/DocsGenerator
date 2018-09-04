@@ -2,18 +2,30 @@
 
 {{>partials/class.header}}
 {{#children}}
-<h3 id="{{id}}">{{>partials/classSubtitle}}</h3>
+<h3 id="{{id}}">
+	{{>partials/classSubtitle}}
+</h3>
 {{#children}}
 {{#overload}}
-<a id="{{id}}" data-uid="{{uid}}"></a>
+	<a id="{{id}}" data-uid="{{uid}}"></a>
 {{/overload}}
 <h4 id="{{id}}" data-uid="{{uid}}">{{name.0.value}}</h4>
 <div class="markdown level1 summary">{{{summary}}}</div>
 <div class="markdown level1 conceptual">{{{conceptual}}}</div>
 <h5 class="decalaration">{{__global.declaration}}</h5>
 {{#syntax}}
-<div class="codewrapper">
-  <pre><code class="lang-{{_lang}} hljs">{{syntax.content.0.value}}</code></pre>
+<div class="card">
+  <div class="card-header">
+		<span class="code-language">
+			{{_lang}}
+		</span>
+		<button class="js-copy">
+			Copy
+		</button>
+  </div>
+  <div class="card-body">
+	<pre><code class="lang-{{_lang}} hljs">{{syntax.content.0.value}}</code></pre>
+  </div>
 </div>
 {{#parameters.0}}
 <h5 class="parameters">{{__global.parameters}}</h5>
