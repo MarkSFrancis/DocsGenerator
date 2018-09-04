@@ -7,8 +7,6 @@ body {
 }
 
 .content {
-    margin-left: 270px;
-    margin-right: 240px;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -418,10 +416,12 @@ header .navbar {
 
 .fake-header {
     height: 105px;
+    display: none;
 }
 
 .fake-base {
     height: 65px;
+    display: none;
 }
 
 .sidetoc {
@@ -781,8 +781,18 @@ footer {
     margin-right: 25px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     #sidetoggle.collapse {
+        display: block;
+    }
+
+    .content {
+        margin-left: 270px;
+        margin-right: 240px;
+    }
+
+    .fake-header,
+    .fake-base {
         display: block;
     }
 
@@ -815,9 +825,7 @@ footer {
     }
 
     .sidenav {
-        padding: 15px 0;
-        margin-left: -15px;
-        margin-right: -15px;
+        display: none;
     }
 
     .sidefilter {
@@ -892,6 +900,10 @@ footer {
     h4:before {
         content: '';
         display: none;
+    }
+
+    .navbar .nav-link {
+        padding-left: 15px;
     }
 }
 
