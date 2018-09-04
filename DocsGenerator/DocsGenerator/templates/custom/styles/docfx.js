@@ -23,6 +23,7 @@ $(function () {
 
     breakText();
     renderTabs();
+    renderCodeCopyButtons();
 
     window.refresh = function (article) {
         // Update markup result
@@ -991,6 +992,75 @@ $(function () {
             // Dispatch this event when needed
             // window.dispatchEvent(new CustomEvent('content-update'));
         }
+    }
+
+    function renderCodeCopyButtons() {
+        var totalReplaced = 0;
+        $('pre').each(function (i, e) {
+            var $e = $(e);
+            var html = '<div class="card">' +
+                '<div class="card-header">' +
+                '<button class="btn btn-light js-copy">Copy</button>' +
+                '</div>' +
+                '<div class="card-body"><pre>' + $e.html() + '</pre></div>' +
+                '</div>';
+
+            $e.replaceWith(html);
+            ++totalReplaced;
+        });
+
+        console.log(totalReplaced + " code blocks with copy button added");
+
+        $('.js-copy').click(function () {
+            var $this = $(this);
+
+            // card-header.card
+            var code = $this.parent().parent().find('pre').text();
+
+            var textArea = document.createElement('textarea');
+
+            // Place in top-left corner of screen regardless of scroll position.
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+
+            // Ensure it has a small width and height. Setting to 1px / 1em
+            // doesn't work as this gives a negative w/h on some browsers.
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+
+            // We don't need padding, reducing the size if it does flash render.
+            textArea.style.padding = 0;
+
+            // Clean up any borders.
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+
+            // Avoid flash of white box if rendered for any reason.
+            textArea.style.background = 'transparent';
+
+            textArea.value = code;
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                var worked = document.execCommand('copy');
+
+                if (!worked) {
+                    throw 'Unknown error, may be permission denied';
+                } else {
+                    console.log('Copied to clipboard');
+                }
+            } catch (err) {
+                console.error("Couldn't copy to clipboard: ");
+                console.error(err);
+            }
+
+            document.body.removeChild(textArea);
+        });
     }
 
     function utility() {

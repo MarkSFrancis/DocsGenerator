@@ -19,11 +19,21 @@ namespace DocsGenerator
         /// <returns>The name of the current person as a single <see cref="String"/></returns>
         /// <remarks>Puts a space between each name. <see cref="ExampleNamespace.SampleClass"/> is not used</remarks>
         /// <example>
+        /// A person with two middle names:
         /// <code language="lang-csharp">
         /// var example = new ExampleClass();
         /// var fullName = example.GetFullName("John", "Smith", "David", "James");
         /// 
         /// // Output: "John David James Smith"
+        /// Console.WriteLine(fullName);
+        /// </code>
+        /// 
+        /// A person with no middle names:
+        /// <code language="lang-csharp">
+        /// var example = new ExampleClass();
+        /// var fullName = example.GetFullName("Daniel", "Jones");
+        /// 
+        /// // Output: Daniel Jones
         /// Console.WriteLine(fullName);
         /// </code>
         /// </example>
