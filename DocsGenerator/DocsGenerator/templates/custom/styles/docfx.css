@@ -5,14 +5,11 @@ body {
     height: 100%;
 }
 
-.body-content.row {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.body-content.row > .col-3 {
-    padding-left: 0;
-    padding-right: 0;
+.content {
+    margin-left: 270px;
+    margin-right: 240px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 button,
@@ -98,13 +95,11 @@ svg:hover path {
     fill: #ffffff;
 }
 
-.hljs {
-    display: inline;
-    background-color: inherit;
-    padding: 0;
+code.hljs {
+    background: #f2f2f2;
+    border-radius: .25rem;
+    border: 1px solid #CCC;
 }
-
-
 
 /* additional spacing fixes */
 .btn + .btn {
@@ -613,18 +608,18 @@ body .toc {
 }
 
 .sideaffix {
-    margin-top: 50px;
+    padding-top: 30px;
     font-size: 12px;
     max-height: 100%;
     overflow: hidden;
     top: 100px;
     bottom: 10px;
     position: fixed;
+    padding-right: 15px;
+    width: 270px;
+    background: white;
+    right: 0;
 }
-
-    .sideaffix.shiftup {
-        bottom: 70px;
-    }
 
 .affix {
     position: relative;

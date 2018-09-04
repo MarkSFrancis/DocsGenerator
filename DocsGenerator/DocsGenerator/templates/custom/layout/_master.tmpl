@@ -7,52 +7,40 @@
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  {{>partials/head}}
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
-        {{^_disableNavbar}}
-        {{>partials/navbar}}
-        {{/_disableNavbar}}
-        {{^_disableBreadcrumb}}
-        {{>partials/breadcrumb}}
-        {{/_disableBreadcrumb}}
-      </header>
-	  <div class="fake-header"></div>
-      {{#_enableSearch}}
-      <div class="container body-content">
-        {{>partials/searchResults}}
-      </div>
-      {{/_enableSearch}}
-      <div role="main" class="row body-content hide-when-search">
-      {{^_disableToc}}
-        <div class="col-3">
-        {{>partials/toc}}
+	{{>partials/head}}
+	<body data-spy="scroll" data-target="#affix" data-offset="120">
+		<div id="wrapper">
+			<header>
+				{{^_disableNavbar}}
+					{{>partials/navbar}}
+				{{/_disableNavbar}}
+				{{^_disableBreadcrumb}}
+					{{>partials/breadcrumb}}
+				{{/_disableBreadcrumb}}
+			</header>
+			<div class="fake-header"></div>
+			{{#_enableSearch}}
+				<div class="body-content">
+					{{>partials/searchResults}}
+				</div>
+			{{/_enableSearch}}
+			<div role="main" class="hide-when-search">
+				{{^_disableToc}}
+					{{>partials/toc}}
+				{{/_disableToc}}
+				<article class="content wrap" id="_content" data-uid="{{uid}}">
+					{{!body}}
+				</article>
+				{{^_disableAffix}}
+					{{>partials/affix}}
+				{{/_disableAffix}}
+			</div>
 		</div>
-      {{/_disableToc}}
-      {{#_disableToc}}
-        {{/_disableToc}}
-          {{#_disableAffix}}
-          {{/_disableAffix}}
-          {{^_disableAffix}}
-          <div class="col-6">
-          {{/_disableAffix}}
-            <article class="content wrap" id="_content" data-uid="{{uid}}">
-                {{!body}}
-            </article>
-          </div>
-          {{^_disableAffix}}
-		  <div class="col-3">
-          {{>partials/affix}}
-		  </div>
-          {{/_disableAffix}}
-        </div>
-      </div>
-	  <div class="fake-base"></div>
-      {{^_disableFooter}}
-      {{>partials/footer}}
-      {{/_disableFooter}}
-    </div>
-    {{>partials/scripts}}
-  </body>
+		<div class="fake-base"></div>
+			{{^_disableFooter}}
+				{{>partials/footer}}
+			{{/_disableFooter}}
+		</div>
+		{{>partials/scripts}}
+	</body>
 </html>
