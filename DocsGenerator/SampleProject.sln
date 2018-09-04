@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocsGenerator", "DocsGenerator\DocsGenerator.csproj", "{5B75F6D7-7553-4B17-9A8C-DABD65445434}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleProject.Docs", "SampleProject.Docs\SampleProject.Docs.csproj", "{5B75F6D7-7553-4B17-9A8C-DABD65445434}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleProject", "SampleProject\SampleProject.csproj", "{E1BE08FA-1D3B-4931-A041-D91C87D90120}"
 EndProject

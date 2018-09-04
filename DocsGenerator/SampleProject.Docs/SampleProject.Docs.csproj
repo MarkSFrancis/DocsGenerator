@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -6,16 +6,10 @@
 
   <ItemGroup>
     <Compile Remove="CustomTemplate\**" />
-    <Compile Remove="templates\light\bower_components\**" />
-    <Compile Remove="templates\light\node_modules\**" />
     <Compile Remove="_site\**" />
     <EmbeddedResource Remove="CustomTemplate\**" />
-    <EmbeddedResource Remove="templates\light\bower_components\**" />
-    <EmbeddedResource Remove="templates\light\node_modules\**" />
     <EmbeddedResource Remove="_site\**" />
     <None Remove="CustomTemplate\**" />
-    <None Remove="templates\light\bower_components\**" />
-    <None Remove="templates\light\node_modules\**" />
     <None Remove="_site\**" />
   </ItemGroup>
 
