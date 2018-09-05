@@ -1069,7 +1069,7 @@ $(function () {
             console.error('Please set the data-light-src attribute for the js-current-theme element, or the theme toggler will not work');
         }
 
-        var darkThemeClass = 'dark-theme';
+        var darkThemeClass = themeManager.darkThemeClass;
 
         var $htmlElement = $(document.documentElement);
 

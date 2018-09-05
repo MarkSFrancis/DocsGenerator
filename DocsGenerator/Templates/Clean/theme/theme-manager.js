@@ -34,6 +34,10 @@ var themeManager = function () {
 
         addThemeSwitchedEvent(handler) {
             themeSwitchedHandlers.push(handler);
+        },
+
+        get darkThemeClass() {
+            return 'dark-theme';
         }
     }
 }();
