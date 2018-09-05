@@ -46,3 +46,168 @@ built_in:"ip eip rip al ah bl bh cl ch dl dh sil dil bpl spl r8b r9b r10b r11b r
  * Copyright (c) 2018 Bryan Braun; Licensed MIT
  */
 !function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=A.hasOwnProperty("icon")?A.icon:"",A.visible=A.hasOwnProperty("visible")?A.visible:"hover",A.placement=A.hasOwnProperty("placement")?A.placement:"right",A.ariaLabel=A.hasOwnProperty("ariaLabel")?A.ariaLabel:"Anchor",A.class=A.hasOwnProperty("class")?A.class:"",A.truncate=A.hasOwnProperty("truncate")?Math.floor(A.truncate):64}function f(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new Error("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return!!("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,i,n,o,s,r,a,c,h,l,u=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),A||(A="h2, h3, h4, h5, h6"),0===(e=f(A)).length)return this;for(function(){if(null===document.head.querySelector("style.anchorjs")){var A,e=document.createElement("style");e.className="anchorjs",e.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"], style'))?document.head.appendChild(e):document.head.insertBefore(e,A),e.sheet.insertRule(" .anchorjs-link {   opacity: 0;   text-decoration: none;   -webkit-font-smoothing: antialiased;   -moz-osx-font-smoothing: grayscale; }",e.sheet.cssRules.length),e.sheet.insertRule(" *:hover > .anchorjs-link, .anchorjs-link:focus  {   opacity: 1; }",e.sheet.cssRules.length),e.sheet.insertRule(" [data-anchorjs-icon]::after {   content: attr(data-anchorjs-icon); }",e.sheet.cssRules.length),e.sheet.insertRule(' @font-face {   font-family: "anchorjs-icons";   src: url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype"); }',e.sheet.cssRules.length)}}(),t=document.querySelectorAll("[id]"),i=[].map.call(t,function(A){return A.id}),o=0;o<e.length;o++)if(this.hasAnchorJSLink(e[o]))u.push(o);else{if(e[o].hasAttribute("id"))n=e[o].getAttribute("id");else if(e[o].hasAttribute("data-anchor-id"))n=e[o].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[o].textContent),r=0;void 0!==s&&(c=a+"-"+r),r+=1,-1!==(s=i.indexOf(c)););s=void 0,i.push(c),e[o].setAttribute("id",c),n=c}n.replace(/-/g," "),(h=document.createElement("a")).className="anchorjs-link "+this.options.class,h.href="#"+n,h.setAttribute("aria-label",this.options.ariaLabel),h.setAttribute("data-anchorjs-icon",this.options.icon),"always"===l&&(h.style.opacity="1"),""===this.options.icon&&(h.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(h.style.lineHeight="inherit")),"left"===this.options.placement?(h.style.position="absolute",h.style.marginLeft="-1em",h.style.paddingRight="0.5em",e[o].insertBefore(h,e[o].firstChild)):(h.style.paddingLeft="0.375em",e[o].appendChild(h))}for(o=0;o<u.length;o++)e.splice(u[o]-o,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,i=f(A),n=0;n<i.length;n++)(t=i[n].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(i[n]))&&this.elements.splice(e,1),i[n].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){return this.options.truncate||d(this.options),A.trim().replace(/\'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]\.\/\(\)\*\\\n\t\b\v]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),t=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||t||!1}}});
+/*!
+ * JavaScript Cookie v2.2.0
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+ * Released under the MIT license
+ */
+;(function (factory) {
+	var registeredInModuleLoader = false;
+	if (typeof define === 'function' && define.amd) {
+		define(factory);
+		registeredInModuleLoader = true;
+	}
+	if (typeof exports === 'object') {
+		module.exports = factory();
+		registeredInModuleLoader = true;
+	}
+	if (!registeredInModuleLoader) {
+		var OldCookies = window.Cookies;
+		var api = window.Cookies = factory();
+		api.noConflict = function () {
+			window.Cookies = OldCookies;
+			return api;
+		};
+	}
+}(function () {
+	function extend () {
+		var i = 0;
+		var result = {};
+		for (; i < arguments.length; i++) {
+			var attributes = arguments[ i ];
+			for (var key in attributes) {
+				result[key] = attributes[key];
+			}
+		}
+		return result;
+	}
+
+	function init (converter) {
+		function api (key, value, attributes) {
+			var result;
+			if (typeof document === 'undefined') {
+				return;
+			}
+
+			// Write
+
+			if (arguments.length > 1) {
+				attributes = extend({
+					path: '/'
+				}, api.defaults, attributes);
+
+				if (typeof attributes.expires === 'number') {
+					var expires = new Date();
+					expires.setMilliseconds(expires.getMilliseconds() + attributes.expires * 864e+5);
+					attributes.expires = expires;
+				}
+
+				// We're using "expires" because "max-age" is not supported by IE
+				attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
+
+				try {
+					result = JSON.stringify(value);
+					if (/^[\{\[]/.test(result)) {
+						value = result;
+					}
+				} catch (e) {}
+
+				if (!converter.write) {
+					value = encodeURIComponent(String(value))
+						.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+				} else {
+					value = converter.write(value, key);
+				}
+
+				key = encodeURIComponent(String(key));
+				key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent);
+				key = key.replace(/[\(\)]/g, escape);
+
+				var stringifiedAttributes = '';
+
+				for (var attributeName in attributes) {
+					if (!attributes[attributeName]) {
+						continue;
+					}
+					stringifiedAttributes += '; ' + attributeName;
+					if (attributes[attributeName] === true) {
+						continue;
+					}
+					stringifiedAttributes += '=' + attributes[attributeName];
+				}
+				return (document.cookie = key + '=' + value + stringifiedAttributes);
+			}
+
+			// Read
+
+			if (!key) {
+				result = {};
+			}
+
+			// To prevent the for loop in the first place assign an empty array
+			// in case there are no cookies at all. Also prevents odd result when
+			// calling "get()"
+			var cookies = document.cookie ? document.cookie.split('; ') : [];
+			var rdecode = /(%[0-9A-Z]{2})+/g;
+			var i = 0;
+
+			for (; i < cookies.length; i++) {
+				var parts = cookies[i].split('=');
+				var cookie = parts.slice(1).join('=');
+
+				if (!this.json && cookie.charAt(0) === '"') {
+					cookie = cookie.slice(1, -1);
+				}
+
+				try {
+					var name = parts[0].replace(rdecode, decodeURIComponent);
+					cookie = converter.read ?
+						converter.read(cookie, name) : converter(cookie, name) ||
+						cookie.replace(rdecode, decodeURIComponent);
+
+					if (this.json) {
+						try {
+							cookie = JSON.parse(cookie);
+						} catch (e) {}
+					}
+
+					if (key === name) {
+						result = cookie;
+						break;
+					}
+
+					if (!key) {
+						result[name] = cookie;
+					}
+				} catch (e) {}
+			}
+
+			return result;
+		}
+
+		api.set = api;
+		api.get = function (key) {
+			return api.call(api, key);
+		};
+		api.getJSON = function () {
+			return api.apply({
+				json: true
+			}, [].slice.call(arguments));
+		};
+		api.defaults = {};
+
+		api.remove = function (key, attributes) {
+			api(key, '', extend(attributes, {
+				expires: -1
+			}));
+		};
+
+		api.withConverter = init;
+
+		return api;
+	}
+
+	return init(function () {});
+}));

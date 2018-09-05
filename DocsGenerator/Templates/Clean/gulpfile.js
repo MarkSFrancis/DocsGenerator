@@ -17,7 +17,8 @@ var vendor = {
        'node_modules/js-url/url.min.js',
        'node_modules/twbs-pagination/jquery.twbsPagination.min.js',
        "node_modules/mark.js/dist/jquery.mark.min.js",
-       "node_modules/anchor-js/anchor.min.js"
+       "node_modules/anchor-js/anchor.min.js",
+       "node_modules/js-cookie/src/js.cookie.js"
       ],
   webWorker: {
     src: ['lunr.js'],
