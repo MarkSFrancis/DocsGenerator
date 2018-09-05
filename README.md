@@ -2,7 +2,9 @@
 A custom DocFX template with a light theme, and a focus on readability
 
 # Screenshots
-![App](Screenshots/1.png)
+![App (Light Theme)](Screenshots/1.png)
+
+![App (Dark Theme)](Screenshots/2.png)
 
 # How To
 
