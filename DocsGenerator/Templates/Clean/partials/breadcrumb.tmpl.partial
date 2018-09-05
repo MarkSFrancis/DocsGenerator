@@ -6,4 +6,7 @@
       <li class="breadcrumb-item">{{_tocTitle}}</li>
     </ul>
   </div>
+
+  <img class="js-switch-theme theme-display" id="js-current-theme" data-dark-src="{{_rel}}dark-theme-icon.png" data-light-src="{{_rel}}light-theme-icon.png">
+  </img>
 </div>

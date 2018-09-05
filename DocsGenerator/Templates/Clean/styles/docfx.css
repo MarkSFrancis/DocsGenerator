@@ -7,6 +7,16 @@ body {
     line-height: 1.6;
 }
 
+html.dark-theme {
+    filter: invert(100%);
+}
+
+.theme-display {
+    height: 36px;
+    width: 36px;
+    margin-right: 5px;
+}
+
 .content {
     padding-left: 30px;
     padding-right: 30px;

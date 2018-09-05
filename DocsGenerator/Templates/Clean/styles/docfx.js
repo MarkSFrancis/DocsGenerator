@@ -24,6 +24,7 @@ $(function () {
     breakText();
     renderTabs();
     renderCodeCopyButtons();
+    setupThemeToggle();
 
     window.refresh = function (article) {
         // Update markup result
@@ -343,7 +344,7 @@ $(function () {
     // Update href in navbar
     function renderNavbar() {
         var navbar = $('#navbar ul')[0];
-        if (typeof(navbar) === 'undefined') {
+        if (typeof (navbar) === 'undefined') {
             loadNavbar();
         } else {
             $('#navbar ul a.active').parents('li').addClass(active);
@@ -545,10 +546,7 @@ $(function () {
 
     //Setup Affix
     function renderAffix() {
-        console.log('Rendering affix...');
         var hierarchy = getHierarchy();
-        console.log('Rendering hierarchy... ');
-        console.log(hierarchy);
 
         if (hierarchy && hierarchy.length > 0) {
             var html = '<h5 class="title">In This Article</h5>';
@@ -995,7 +993,6 @@ $(function () {
     }
 
     function renderCodeCopyButtons() {
-        var totalReplaced = 0;
         $('pre').each(function (i, e) {
             var $e = $(e);
             var html = '<div class="card">' +
@@ -1006,10 +1003,7 @@ $(function () {
                 '</div>';
 
             $e.replaceWith(html);
-            ++totalReplaced;
         });
-
-        console.log(totalReplaced + " code blocks with copy button added");
 
         $('.js-copy').click(function () {
             var $this = $(this);
@@ -1061,6 +1055,50 @@ $(function () {
 
             document.body.removeChild(textArea);
         });
+    }
+
+    function setupThemeToggle() {
+        var $lightDarkThemeIndicator = $('#js-current-theme');
+        var darkThemeImageUrl = $lightDarkThemeIndicator.data('dark-src');
+        var lightThemeImageUrl = $lightDarkThemeIndicator.data('light-src');
+
+        if (!darkThemeImageUrl) {
+            console.error('Please set the data-dark-src attribute for the js-current-theme element, or the theme toggler will not work');
+        }
+        if (!lightThemeImageUrl) {
+            console.error('Please set the data-light-src attribute for the js-current-theme element, or the theme toggler will not work');
+        }
+
+        var darkThemeClass = 'dark-theme';
+
+        var $htmlElement = $(document.documentElement);
+
+        function toggleThemeUi(darkTheme) {
+            var imgUrl = darkTheme ? darkThemeImageUrl : lightThemeImageUrl;
+
+            $lightDarkThemeIndicator.attr('src', imgUrl);
+
+            if (darkTheme) {
+                $htmlElement.animate({
+                    filter: 'invert(100%)'
+                }).addClass(darkThemeClass);
+            } else {
+                $htmlElement.animate({
+                    filter: 'invert(0%)'
+                }).removeClass(darkThemeClass);
+            }
+        }
+
+        themeManager.addThemeSwitchedEvent(function (switchedToDark) {
+            toggleThemeUi(switchedToDark);
+        });
+
+        $('.js-switch-theme').click(function () {
+            themeManager.toggleTheme();
+        })
+
+        // Load initial state
+        toggleThemeUi(themeManager.isDarkTheme);
     }
 
     function utility() {
