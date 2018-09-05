@@ -1,5 +1,5 @@
 # DocsGenerator
-A custom DocFX template with a light theme, and a focus on readability
+A custom DocFX template with a light and dark theme, and a heavy focus on readability
 
 # Screenshots
 ![App (Light Theme)](Screenshots/1.png)
