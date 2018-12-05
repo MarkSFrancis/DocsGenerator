@@ -10,8 +10,8 @@ A custom DocFX template with a light and dark theme, and a heavy focus on readab
 
 ## Configuration
 
-The sample project's build is configured by a dependency on `docfx.console`, and a reference to the `Templates/Clean` folder.
-To change this to run your own builds, add `docfx.console` to your solution, and edit the `templates` section in `docfx.json` to use the `Templates/Clean` (you'll need to edit the relative path according to where the `Templates/Clean` folder is to your docfx.json file)
+The sample project's build is configured by a dependency on `docfx.console`, and a reference to the `Theme/Clean` folder.
+To change this to run your own builds, add `docfx.console` to your solution, and edit the `templates` section in `docfx.json` to use the `Theme/Clean` (you'll need to edit the relative path according to where the `Theme/Clean` folder is to your docfx.json file)
 
 ## Build the Sample
 
