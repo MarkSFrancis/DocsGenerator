@@ -684,6 +684,10 @@ body .toc {
     font-size: 12px;
 }
 
+.affix ul {
+    word-break: break-all;
+}
+
 .affix>ul.level1 {
     display: block;
     overflow: hidden;
@@ -744,8 +748,9 @@ body .toc {
     display: inline;
 }
 
-.affix ul ul {
-    white-space: nowrap;
+.affix .nav,
+.toc .nav {
+    display: block;
 }
 
 .codewrapper {
