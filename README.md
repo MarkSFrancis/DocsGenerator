@@ -1,4 +1,4 @@
-# DocsGenerator
+# PhnxDocs
 A custom DocFX template with a light and dark theme, and a heavy focus on readability
 
 # Screenshots
