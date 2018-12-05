@@ -35,7 +35,3 @@ To change this to run your own builds, add `docfx.console` to your solution, and
 * The main (non-vendor) JS and CSS files for the site are located in `styles`, and are `docfx.js` and `docfx.css` accordingly
 
 * The site builds HTML using the master page (`layout/_master.tmpl`), which in turn uses a combination of partial views (in the `partials` folder)
-
-# TODO
-
-* Add a menu for mobile - there's no way to view the TOC from mobile
