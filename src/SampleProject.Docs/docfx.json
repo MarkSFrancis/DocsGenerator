@@ -38,7 +38,7 @@
     ],
     "dest": "../SampleProject.Site",
     "template": [
-      "../Templates/Clean"
+      "../../Theme/Clean"
     ]
   }
 }
