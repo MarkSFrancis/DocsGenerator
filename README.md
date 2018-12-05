@@ -17,16 +17,16 @@ To change this to run your own builds, add `docfx.console` to your solution, and
 
 1. Clone or fork the repository
 
-1. Open `DocsGenerator/SampleProject.sln` in Visual Studio
+1. Open `Sample/SampleProject.sln` in Visual Studio
 1. Build the solution
-1. A new folder in `DocsGenerator` called `SampleProject.Site` will be generated
+1. A new folder in `Sample` called `SampleProject.Site` will be generated
 1. Open that folder with a server that can serve static files (such as [http-server](https://www.npmjs.com/package/http-server)), and you will be able to browse generated documentation site
 
-# Editing the Template (`DocsGenerator/Templates/Clean`)
+# Editing the Theme (`Theme/Clean`)
 
 > #### If you're changing dependencies on 3rd party JS/ CSS
 > 1. All dependencies are managed by Node Package Manager, so make sure you have npm installed. If you don't already have npm installed, you can install npm as part of [node.js](https://nodejs.org/en/download/)
-> 1. Navigate to the template folder (`DocsGenerator/Templates/Clean`) in a terminal
+> 1. Navigate to the template folder (`Theme/Clean`) in a terminal
 > 1. Run `npm install` to install all packages
 > 1. If you want to add, change or remove a dependency, make sure to update `gulpfile.js` with your changes, as this is the file that configures which items go into `docfx.vendor.js` and `docfx.vendor.css`
 > 1. Run `npm run gulp` to build `docfx.vendor.js` or `docfx.vendor.css`
